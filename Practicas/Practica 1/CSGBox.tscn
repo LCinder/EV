@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="CSGBox" type="CSGBox"]
+transform = Transform( 0.99996, 0, 0.00898832, 0, 1, 0, -0.00898832, 0, 0.99996, 10.9555, 0, 0 )
+
+[node name="CSGSphere" type="CSGSphere" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.659357, 0, 0 )
+operation = 2
