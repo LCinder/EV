@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://CSGBox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Silla.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -13,10 +14,11 @@ current = true
 fov = 56.9775
 
 [node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6485, 4.77203, -0.518585 )
+transform = Transform( 0.968588, -6.31447e-09, 0.248673, 0.00391467, 0.999876, -0.0152477, -0.248642, 0.0157422, 0.968468, 4.10408, 2.44438, -0.518585 )
 light_energy = 6.0
 light_indirect_energy = 0.0
 light_specular = 0.0
+omni_range = 8.51694
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0.985601, 1.79768, 4.24203 )
@@ -26,31 +28,4 @@ material/0 = null
 [node name="CSGBox" parent="." instance=ExtResource( 1 )]
 transform = Transform( -0.186095, 0, 0.982532, -0.982484, 0.00991336, -0.186086, -0.00974019, -0.999951, -0.00184483, -4.50184, 5.96046e-08, -5.11211 )
 
-[node name="Silla" type="CSGBox" parent="."]
-transform = Transform( -0.161493, -0.629337, 0.760168, 0.968618, -0.248555, 0, 0.188943, 0.736312, 0.649727, -1.83857, 1.11165, 0.0149356 )
-width = 2.49395
-height = 0.102521
-depth = 0.0858615
-
-[node name="CSGCylinder" type="CSGCylinder" parent="Silla"]
-transform = Transform( 0.999884, -0.0152187, 1.49012e-08, 0.0152187, 0.999884, 0, -2.98023e-08, -1.19209e-07, 1, 1.40773, -0.00592393, -0.00339878 )
-snap = 0.035
-radius = 0.465471
-height = 0.10239
-sides = 10
-
-[node name="CSGBox4" type="CSGBox" parent="Silla"]
-transform = Transform( 0.966659, 0.0204885, 0.255247, -0.253085, -0.0752598, 0.964513, 0.0389712, -0.996953, -0.0675654, -1.21327, 0.0159827, -0.0612168 )
-width = 0.173216
-depth = 0.173097
-
-[node name="CSGBox3" type="CSGBox" parent="Silla"]
-transform = Transform( 0.983947, 0.178459, 9.68575e-08, -0.178459, 0.983947, -2.98023e-08, -2.98023e-08, -1.10269e-06, 1, -1.21343, 0.0864354, 0.0157678 )
-width = 0.173216
-depth = 0.173097
-
-[node name="CSGCylinder2" type="CSGCylinder" parent="Silla"]
-transform = Transform( -0.17039, 0.968618, 0.18096, -0.664013, -0.248555, 0.7052, 0.728048, -2.9045e-08, 0.685526, -0.22901, -0.307848, -0.0214146 )
-radius = 0.769
-height = 0.111
-sides = 4
+[node name="Silla" parent="." instance=ExtResource( 2 )]

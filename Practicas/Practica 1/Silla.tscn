@@ -1,0 +1,29 @@
+[gd_scene format=2]
+
+[node name="Silla" type="CSGBox"]
+transform = Transform( 1.13133e-08, 4.2222e-08, 1, 0.965926, -0.258819, 0, 0.258819, 0.965926, -4.37114e-08, -1.83857, 1.11165, 0.0149356 )
+width = 2.49395
+height = 0.102521
+depth = 0.0858615
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="."]
+transform = Transform( 0.647047, -15.42, 0, 2.41481, 4.13178, 0, 0, 0, 3, -0.312639, -0.539356, 0.00099647 )
+radius = 0.332143
+height = 0.00551187
+sides = 20
+
+[node name="CSGCylinder" type="CSGCylinder" parent="."]
+transform = Transform( -0.000116914, -0.289683, -0.997374, -0.000456074, -3.98949, 0.0724207, -1.5, 0.00123558, 5.57188e-05, 1.08396, -0.028073, 0.00268161 )
+radius = 0.48
+height = 0.0357251
+sides = 20
+
+[node name="CSGBox3" type="CSGBox" parent="."]
+transform = Transform( 1.28155e-07, 0.965926, -0.258819, -2.26267e-08, -0.258819, -0.965926, -1, 1.29645e-07, -1.13133e-08, -1.17754, 0.0127259, -0.0839534 )
+height = 0.167706
+depth = 0.15182
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( -0.258819, 0.965925, 0, -0.965926, -0.258819, 0, 0, -1.48039e-15, 1, -1.1808, -0.0240754, -0.00138044 )
+height = 0.167706
+depth = 0.15182
