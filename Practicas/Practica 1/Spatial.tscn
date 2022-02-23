@@ -1,31 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://CSGBox.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Silla.tscn" type="PackedScene" id=2]
-
-[sub_resource type="CubeMesh" id=1]
+[ext_resource path="res://Scene1.tscn" type="PackedScene" id=1]
 
 [node name="Spatial" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0185093, 0 )
 
-[node name="ClippedCamera" type="ClippedCamera" parent="."]
-transform = Transform( 0.0668205, -0.398513, 0.914725, 0.0301931, 0.917162, 0.397369, -0.997308, 0.00106601, 0.0733175, 3.30737, 3.60055, 0.762107 )
-current = true
-fov = 56.9775
-
-[node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 0.968588, -6.31447e-09, 0.248673, 0.00391467, 0.999876, -0.0152477, -0.248642, 0.0157422, 0.968468, 4.10408, 2.44438, -0.518585 )
-light_energy = 6.0
-light_indirect_energy = 0.0
-light_specular = 0.0
-omni_range = 8.51694
-
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0.985601, 1.79768, 4.24203 )
-mesh = SubResource( 1 )
-material/0 = null
-
-[node name="CSGBox" parent="." instance=ExtResource( 1 )]
-transform = Transform( -0.186095, 0, 0.982532, -0.982484, 0.00991336, -0.186086, -0.00974019, -0.999951, -0.00184483, -4.50184, 5.96046e-08, -5.11211 )
-
-[node name="Silla" parent="." instance=ExtResource( 2 )]
+[node name="Spatial" parent="." instance=ExtResource( 1 )]

@@ -1,22 +1,14 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="CubeMesh" id=2]
 
 [node name="Silla" type="CSGBox"]
-transform = Transform( 1.13133e-08, 4.2222e-08, 1, 0.965926, -0.258819, 0, 0.258819, 0.965926, -4.37114e-08, -0.0160435, 1.11165, 0.322381 )
+transform = Transform( 1.13133e-08, 4.2222e-08, 1, 0.965926, -0.258819, 0, 0.258819, 0.965926, -4.37114e-08, -0.0160435, 1.11165, -0.203872 )
 width = 2.49395
 height = 0.102521
 depth = 0.0858615
-
-[node name="CSGCylinder2" type="CSGCylinder" parent="."]
-transform = Transform( 0.647047, -15.42, 0, 2.41481, 4.13178, 0, 0, 0, 3, -0.312639, -0.539356, 0.00099647 )
-radius = 0.332143
-height = 0.00551187
-sides = 20
-
-[node name="CSGCylinder" type="CSGCylinder" parent="."]
-transform = Transform( -0.000116914, -0.289683, -0.997374, -0.000456074, -3.98949, 0.0724207, -1.5, 0.00123558, 5.57188e-05, 1.08968, -0.00672722, 0.00268161 )
-radius = 0.48
-height = 0.0357251
-sides = 20
 
 [node name="CSGBox3" type="CSGBox" parent="."]
 transform = Transform( 1.28155e-07, 0.965926, -0.258819, -2.26267e-08, -0.258819, -0.965926, -1, 1.29645e-07, -1.13133e-08, -1.17754, 0.012726, 0.000284648 )
@@ -25,6 +17,74 @@ height = 0.167706
 depth = 0.15182
 
 [node name="CSGBox2" type="CSGBox" parent="."]
-transform = Transform( -0.258819, 0.965925, 0, -0.965926, -0.258819, 7.10543e-15, 0, -6.50844e-16, 1, -1.16808, 0.0233891, -0.00138044 )
+transform = Transform( -0.258819, 0.965925, 0, -0.965926, -0.258819, 1.06581e-14, 0, -2.36072e-16, 1, -1.16808, 0.0233891, -0.00138044 )
 height = 0.167706
 depth = 0.15182
+
+[node name="CSGSphere3" type="CSGSphere" parent="."]
+transform = Transform( -0.00118513, -0.101616, 0.789607, 3.58592e-05, 0.332122, -0.0238968, -0.873638, 1.02609e-07, -0.00131125, 1.39424, 0.245099, -0.387155 )
+radial_segments = 20
+rings = 20
+
+[node name="CSGMesh2" type="CSGMesh" parent="CSGSphere3"]
+transform = Transform( 1, 2.98314e-08, -5.82077e-11, -2.98605e-08, 1, 0, 1.60071e-10, 1.49012e-08, 1, -1.02454, -0.0414981, 0.00200009 )
+operation = 2
+mesh = SubResource( 1 )
+
+[node name="CSGCylinder4" type="CSGCylinder" parent="."]
+transform = Transform( 0.101616, 0.00118525, -0.789607, -0.332123, -3.5853e-05, 0.0238968, -3.01839e-07, 0.87364, 0.00131138, 1.39454, 0.242156, 0.0581837 )
+height = 0.971334
+sides = 20
+smooth_faces = false
+
+[node name="CSGSphere4" type="CSGSphere" parent="."]
+transform = Transform( 0.00118524, -0.101615, -0.789607, -3.58627e-05, 0.332121, 0.0238968, 0.873634, 1.65489e-07, 0.00131138, 1.40014, 0.242029, 0.496814 )
+radial_segments = 20
+rings = 20
+
+[node name="CSGMesh2" type="CSGMesh" parent="CSGSphere4"]
+transform = Transform( 1, 2.98023e-08, -2.91038e-11, -2.98605e-08, 1, 5.96046e-08, 2.32831e-10, 0, 1, -1.02454, -0.0414977, 0.00199962 )
+operation = 2
+mesh = SubResource( 1 )
+
+[node name="CSGMesh2" type="CSGMesh" parent="."]
+transform = Transform( 0.00246768, -0.171121, -1.02965, -7.46355e-05, 0.559294, 0.0311615, 1.57282, 2.50487e-07, 0.00147867, 1.30888, 0.574177, 0.217377 )
+operation = 2
+mesh = SubResource( 2 )
+
+[node name="CSGSphere5" type="CSGSphere" parent="."]
+transform = Transform( 0.000150792, -0.312025, -0.100493, -0.00117607, -0.152548, 0.78355, -0.873638, 1.25453e-07, -0.00131128, -0.29997, -0.504356, -0.387155 )
+radial_segments = 20
+rings = 20
+
+[node name="CSGMesh2" type="CSGMesh" parent="CSGSphere5"]
+transform = Transform( 1, 2.98024e-08, -3.90953e-15, -2.98024e-08, 1, 0, 3.90953e-15, 1.16513e-22, 1, -1.02454, -0.041498, 0.00199986 )
+operation = 2
+mesh = SubResource( 1 )
+
+[node name="CSGCylinder5" type="CSGCylinder" parent="."]
+transform = Transform( 0.312026, -0.000150816, 0.100493, 0.152549, 0.00117619, -0.78355, -3.24683e-07, 0.87364, 0.0013114, -0.297111, -0.503602, 0.0581837 )
+height = 0.971334
+sides = 20
+smooth_faces = false
+
+[node name="CSGSphere6" type="CSGSphere" parent="."]
+transform = Transform( -0.000150806, -0.312024, 0.100493, 0.00117618, -0.152548, -0.78355, 0.873634, 1.88333e-07, 0.0013114, -0.297866, -0.498047, 0.496814 )
+radial_segments = 20
+rings = 20
+
+[node name="CSGMesh2" type="CSGMesh" parent="CSGSphere6"]
+transform = Transform( 1, 2.98023e-08, -2.91038e-11, -2.98605e-08, 1, 5.96046e-08, 2.32831e-10, 0, 1, -1.02454, -0.0414977, 0.00199962 )
+operation = 2
+mesh = SubResource( 1 )
+
+[node name="CSGMesh3" type="CSGMesh" parent="."]
+transform = Transform( -0.0003537, -0.163983, 0.147594, 0.00228349, -0.384416, -0.952766, 1.76145, 3.22893e-07, 0.00165604, -0.389047, -0.699989, 0.217377 )
+operation = 2
+mesh = SubResource( 2 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 0.999998, 1.49012e-08, 0, -1.49012e-08, 0.999998, 1.06581e-14, -2.66454e-15, 2.4869e-14, 1, 0.0205536, 0.0265014, -0.00303102 )
+width = 2.26876
+height = 0.133311
+depth = 0.0748009
