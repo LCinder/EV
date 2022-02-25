@@ -3,7 +3,7 @@
 [node name="Spatial" type="Spatial"]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.871787, -0.184853, 0.45367, 0, 0.926075, 0.37734, -0.489885, -0.32896, 0.80734, 14.4468, 24.7151, 53.5351 )
+transform = Transform( 0.871787, -0.184853, 0.45367, 0, 0.926075, 0.37734, -0.489885, -0.32896, 0.80734, -11.5432, -1.89952, 1.0774 )
 current = true
 fov = 43.4236
 
@@ -13,7 +13,7 @@ light_energy = 1.881
 omni_range = 40.73
 
 [node name="Entrada" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3063, -3.73908, 9.67076 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3063, -3.73908, 14.4632 )
 width = 14.366
 height = 14.456
 depth = 11.7804
@@ -44,3 +44,30 @@ transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, -9.70439, -4.43779, -12.419
 width = 4.1124
 height = 1.34041
 depth = 4.42928
+
+[node name="Castillo2" type="CSGBox" parent="Castillo"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118165, 0, -1.19209e-07 )
+operation = 2
+width = 3.7977
+height = 1.20604
+depth = 4.16274
+
+[node name="Castillo3" type="CSGBox" parent="Castillo"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118165, 0, -1.19209e-07 )
+width = 3.71988
+height = 0.0993205
+depth = 4.12935
+
+[node name="Castillo4" type="CSGBox" parent="Castillo"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118165, 0, -1.19209e-07 )
+operation = 2
+width = 2.20237
+height = 0.0993205
+depth = 3.12567
+
+[node name="Castillo5" type="CSGBox" parent="Castillo"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19421, 0 )
+operation = 2
+width = 3.45021
+height = 1.34041
+depth = 2.60972
