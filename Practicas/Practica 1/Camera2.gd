@@ -2,8 +2,9 @@ extends Camera
 
 
 var seconds = 0
-var SENSIBILITY = 0.01
-var LIMIT_Y_UP = 0.8
+var SENSIBILITY = 0.02
+var LIMIT_Y = 0.6
+var y = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,37 +13,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	y = get_camera_transform().basis.z.y
+
 	if Input.is_action_pressed("Left Camera"):
-		print("y:")
-		print(get_camera_transform().basis.y.y)
-		print("\n")
-		print("z:")
-		print(get_camera_transform().basis.y.x)
-		print("\n")
 		rotate_y(SENSIBILITY)
 	if Input.is_action_pressed("Right Camera"):
-		print("y:")
-		print(get_camera_transform().basis.y.y)
-		print("\n")
-		print("z:")
-		print(get_camera_transform().basis.y.x)
-		print("\n")
 		rotate_y(-SENSIBILITY)
-	if Input.is_action_pressed("Up Camera") and get_camera_transform().basis.y.y >= LIMIT_Y_UP and get_camera_transform().basis.y.z < 0.5:
-		print("y:")
-		print(get_camera_transform().basis.y.y)
-		print("\n")
-		print("z:")
-		print(get_camera_transform().basis.y.x)
-		print("\n")
+	if Input.is_action_pressed("Up Camera") and y > -LIMIT_Y:
 		rotate_object_local(Vector3(1, 0, 0), SENSIBILITY)
-	if Input.is_action_pressed("Down Camera"):# and get_camera_transform().basis.y.y >= LIMIT_Y_UP and get_camera_transform().basis.y.z > -0.5:
-		print("y:")
-		print(get_camera_transform().basis.y.y)
-		print("\n")
-		print("z:")
-		print(get_camera_transform().basis.y.x)
-		print("\n")
+	if Input.is_action_pressed("Down Camera") and y < LIMIT_Y:
 		rotate_object_local(Vector3(1, 0, 0), -SENSIBILITY)
 
 func _orbit_y(s):

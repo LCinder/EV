@@ -11,7 +11,7 @@ fov = 64.9678
 script = ExtResource( 2 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.71781, 10.3722, 1.04061 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.71781, 11.5305, 1.04061 )
 light_energy = 0.781
 light_indirect_energy = 0.0
 light_specular = 0.0
@@ -29,15 +29,15 @@ transform = Transform( 1.13133e-08, 4.2222e-08, 1, 0.965926, -0.258819, 0, 0.258
 [node name="Silla4" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.258819, 0.965926, 8.74228e-08, 0.965926, -0.258819, 0, 2.26267e-08, 8.44439e-08, -1, 11.3416, 1.11165, 0.017065 )
 
-[node name="CSGBox" type="CSGBox" parent="."]
+[node name="Habitacion" type="CSGBox" parent="."]
 transform = Transform( 90, 0, 0, 0, 90, 0, 0, 0, 90, 2.1223, 10.6803, -0.80821 )
 width = 0.620592
 height = 0.248737
 depth = 0.362872
 
-[node name="CSGBox2" type="CSGBox" parent="CSGBox"]
+[node name="Habitacion2" type="CSGBox" parent="Habitacion"]
 transform = Transform( 0.929, 0, 0, 0, 1.4, 0, 0, 0, 0.9, 0, 0.015, 0 )
 operation = 2
-width = 0.658518
-height = 0.198306
-depth = 0.369389
+width = 0.597077
+height = 0.194356
+depth = 0.362893
