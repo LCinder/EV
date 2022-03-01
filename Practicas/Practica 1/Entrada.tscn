@@ -1,0 +1,21 @@
+[gd_scene format=2]
+
+[node name="Entrada" type="CSGBox"]
+transform = Transform( 0.499554, 0, 0, 0, 0.435812, 0, 0, 0, 0.500339, -3.1312, 3.16382, -1.49339 )
+width = 20.4598
+height = 14.456
+depth = 7.5984
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -0.476785, -3.08804, -2.32231 )
+operation = 2
+width = 1.61293
+height = 2.0278
+depth = 3.10083
+
+[node name="CSGSphere" type="CSGSphere" parent="."]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -0.480146, 0.969021, 3.37144 )
+operation = 2
+radius = 0.84474
+radial_segments = 10
+rings = 20

@@ -13,12 +13,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	orbit()
+
+func orbit():
 	y = get_camera_transform().basis.z.y
 
-	if Input.is_action_pressed("Left Camera"):
-		rotate_y(SENSIBILITY)
-	if Input.is_action_pressed("Right Camera"):
-		rotate_y(-SENSIBILITY)
 	if Input.is_action_pressed("Up Camera") and y > -LIMIT_Y:
 		rotate_object_local(Vector3(1, 0, 0), SENSIBILITY)
 	if Input.is_action_pressed("Down Camera") and y < LIMIT_Y:

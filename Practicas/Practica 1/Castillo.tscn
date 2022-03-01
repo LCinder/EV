@@ -1,0 +1,34 @@
+[gd_scene format=2]
+
+[node name="Castillo" type="CSGBox"]
+transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, -0.260685, 2.92548, -0.205818 )
+width = 4.1124
+height = 1.34041
+depth = 4.10064
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+operation = 2
+width = 3.92001
+height = 1.18072
+depth = 3.82273
+
+[node name="Castillo3" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118165, 0.190521, 0 )
+width = 3.71988
+height = 0.0993205
+depth = 4.12935
+
+[node name="Castillo4" type="CSGBox" parent="Castillo3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0288822, 0 )
+operation = 2
+width = 1.6199
+height = 0.340467
+depth = 1.47247
+
+[node name="Castillo5" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.576502, 0 )
+operation = 2
+width = 3.45021
+height = 0.268663
+depth = 2.60972

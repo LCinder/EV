@@ -1,245 +1,64 @@
-[gd_scene format=2]
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Castillo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Torre.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Palmera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Entrada.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Torreon.tscn" type="PackedScene" id=5]
 
 [node name="Spatial" type="Spatial"]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.942332, -0.100166, 0.319338, 0, 0.954162, 0.29929, -0.334679, -0.282031, 0.899138, 8.33886, 16.2941, 26.1187 )
+transform = Transform( 0.942332, -0.135528, 0.30601, 0, 0.914339, 0.40495, -0.334679, -0.381597, 0.861611, 1.00313, 6.43142, 7.14008 )
 current = true
 fov = 53.0616
 
 [node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.61403, 15.3497, -6.5331 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49797, 15.3497, 8.42964 )
 omni_range = 51.4825
 
-[node name="Torre2" type="CSGCylinder" parent="."]
-transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, -11.2982, 8.35535, 0.166769 )
-radius = 0.865391
-height = 0.659563
+[node name="Torreon" parent="." instance=ExtResource( 5 )]
+transform = Transform( 3, 0, 0, 0, 6, 0, 0, 0, 3, 11.785, 7.05817, 1.44954 )
 
-[node name="Torre3" type="CSGCylinder" parent="."]
-transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, -11.2982, 10.5328, 0.166769 )
-radius = 0.956205
-height = 0.659563
+[node name="Torreon2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 3, 0, 0, 0, 6, 0, 0, 0, 3, -11.785, 7.05785, 1.44974 )
 
-[node name="Torre4" type="CSGCylinder" parent="Torre3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2419, 0 )
+[node name="Torre" parent="." instance=ExtResource( 2 )]
+transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, -8.63585, 5.1638, 13.4066 )
+
+[node name="Torre2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, 8.636, 5.16385, 13.4068 )
+
+[node name="Torre3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, 8.636, 5.16385, -12.128 )
+
+[node name="Torre4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, -8.636, 5.16385, -12.128 )
+
+[node name="Entrada" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.499554, 0, 0, 0, 0.435812, 0, 0, 0, 0.500339, 0.157126, 3.36067, 11.5334 )
+
+[node name="Castillo" parent="." instance=ExtResource( 1 )]
+transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, -0.090199, 3.12233, 0.145379 )
+
+[node name="Palmera" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.402039, 0, 0, 0, 0.402039, 0, 0, 0, 0.402039, 16.3686, 1.33547, 9.94581 )
+
+[node name="Isla" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.177153 )
+width = 114.185
+height = 0.400566
+depth = 158.197
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.188251, 2.75739, -2.07052 )
+width = 7.55958
+height = 3.496
+depth = 2.91176
+
+[node name="CSGBox2" type="CSGBox" parent="CSGBox"]
+transform = Transform( 1, 0, 0, 0, 0.792311, 0.610118, 0, -0.610118, 0.792311, 0, 0.644581, 1.19847 )
 operation = 2
-radius = 0.720984
-height = 0.327968
-
-[node name="Torre1" type="CSGCylinder" parent="."]
-transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, -11.1712, 4.96695, 0.379863 )
-radius = 0.785638
-height = 2.28975
-
-[node name="Torre16" type="CSGCylinder" parent="."]
-transform = Transform( 3, 0, 0, 0, 5, 0, 0, 0, 3, 8.1946, 11.1686, -13.6286 )
-radius = 0.865391
-height = 0.659563
-
-[node name="Torre17" type="CSGCylinder" parent="."]
-transform = Transform( 3, 0, 0, 0, 5, 0, 0, 0, 3, 8.1946, 13.3461, -13.7263 )
-radius = 0.956205
-height = 0.659563
-
-[node name="Torre4" type="CSGCylinder" parent="Torre17"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2419, 0 )
-operation = 2
-radius = 0.720984
-height = 0.327968
-
-[node name="Torre18" type="CSGCylinder" parent="."]
-transform = Transform( 3, 0, 0, 0, 6, 0, 0, 0, 3, 8.32164, 6.86132, -13.5132 )
-radius = 0.785638
-height = 2.28975
-
-[node name="Torre19" type="CSGCylinder" parent="."]
-transform = Transform( 3, 0, 0, 0, 5, 0, 0, 0, 3, -15.2866, 11.1686, -13.6286 )
-radius = 0.865391
-height = 0.659563
-
-[node name="Torre20" type="CSGCylinder" parent="."]
-transform = Transform( 3, 0, 0, 0, 5, 0, 0, 0, 3, -15.2866, 13.3461, -13.7263 )
-radius = 0.956205
-height = 0.659563
-
-[node name="Torre4" type="CSGCylinder" parent="Torre20"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2419, 0 )
-operation = 2
-radius = 0.720984
-height = 0.327968
-
-[node name="Torre21" type="CSGCylinder" parent="."]
-transform = Transform( 3, 0, 0, 0, 6, 0, 0, 0, 3, -15.1596, 6.86132, -13.5132 )
-radius = 0.785638
-height = 2.28975
-
-[node name="Torre13" type="CSGCylinder" parent="."]
-transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, -11.2982, 8.35535, 0.166769 )
-radius = 0.865391
-height = 0.659563
-
-[node name="Torre14" type="CSGCylinder" parent="."]
-transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, -11.2982, 10.5328, 0.166769 )
-radius = 0.956205
-height = 0.659563
-
-[node name="Torre4" type="CSGCylinder" parent="Torre14"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2419, 0 )
-operation = 2
-radius = 0.720984
-height = 0.327968
-
-[node name="Torre15" type="CSGCylinder" parent="."]
-transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, -11.1712, 4.96695, 0.379863 )
-radius = 0.785638
-height = 2.28975
-
-[node name="Torre4" type="CSGCylinder" parent="."]
-transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, 4.28155, 4.96695, 0.379863 )
-radius = 0.785638
-height = 2.28975
-
-[node name="Torre5" type="CSGCylinder" parent="."]
-transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, 4.15452, 8.35535, 0.166769 )
-radius = 0.865391
-height = 0.659563
-
-[node name="Torre6" type="CSGCylinder" parent="."]
-transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, 4.15452, 10.5328, 0.166769 )
-radius = 0.956205
-height = 0.659563
-
-[node name="Torre4" type="CSGCylinder" parent="Torre6"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2419, 0 )
-operation = 2
-radius = 0.720984
-height = 0.327968
-
-[node name="Torre7" type="CSGCylinder" parent="."]
-transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, -11.1712, 4.96695, -25.7081 )
-radius = 0.785638
-height = 2.28975
-
-[node name="Torre8" type="CSGCylinder" parent="."]
-transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, -11.2982, 8.35535, -25.9212 )
-radius = 0.865391
-height = 0.659563
-
-[node name="Torre9" type="CSGCylinder" parent="."]
-transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, -11.2982, 10.5328, -25.9212 )
-radius = 0.956205
-height = 0.659563
-
-[node name="Torre4" type="CSGCylinder" parent="Torre9"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2419, 0 )
-operation = 2
-radius = 0.720984
-height = 0.327968
-
-[node name="Torre10" type="CSGCylinder" parent="."]
-transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, 4.28155, 4.96695, -25.7081 )
-radius = 0.785638
-height = 2.28975
-
-[node name="Torre11" type="CSGCylinder" parent="."]
-transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, 4.15452, 8.35535, -25.9212 )
-radius = 0.865391
-height = 0.659563
-
-[node name="Torre12" type="CSGCylinder" parent="."]
-transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, 4.15452, 10.5328, -25.9212 )
-radius = 0.956205
-height = 0.659563
-
-[node name="Torre4" type="CSGCylinder" parent="Torre12"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2419, 0 )
-operation = 2
-radius = 0.720984
-height = 0.327968
-
-[node name="Entrada" type="CSGBox" parent="."]
-transform = Transform( 0.499554, 0, 0, 0, 0.435812, 0, 0, 0, 0.500339, -3.1312, 3.16382, -1.49339 )
-width = 20.4598
-height = 14.456
-depth = 7.5984
-
-[node name="CSGBox" type="CSGBox" parent="Entrada"]
-transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -0.476785, -3.08804, -2.32231 )
-operation = 2
-width = 1.61293
-height = 2.0278
-depth = 3.10083
-
-[node name="CSGSphere" type="CSGSphere" parent="Entrada"]
-transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -0.480146, 0.969021, 3.37144 )
-operation = 2
-radius = 0.84474
-radial_segments = 10
-rings = 20
-
-[node name="Castillo" type="CSGBox" parent="."]
-transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, -3.58997, 2.92548, -12.4986 )
-width = 4.1124
-height = 1.34041
-depth = 4.10064
-
-[node name="Castillo2" type="CSGBox" parent="Castillo"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118165, 0, 0.168027 )
-operation = 2
-width = 3.7977
-height = 1.20604
-depth = 3.81598
-
-[node name="Castillo3" type="CSGBox" parent="Castillo"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118165, 0.190521, 0 )
-width = 3.71988
-height = 0.0993205
-depth = 4.12935
-
-[node name="Castillo4" type="CSGBox" parent="Castillo/Castillo3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0556163, 0 )
-operation = 2
-width = 2.20237
-height = 0.340467
-depth = 2.82949
-
-[node name="Castillo5" type="CSGBox" parent="Castillo"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.710458, 0 )
-operation = 2
-width = 3.45021
-height = 0.268663
-depth = 2.60972
-
-[node name="Palmera" type="CSGCylinder" parent="."]
-transform = Transform( 0.402039, 0, 0, 0, 0.402039, 0, 0, 0, 0.402039, 11.1071, 1.13862, -5.01693 )
-radius = 0.225499
-height = 5.04463
-
-[node name="CSGCylinder" type="CSGCylinder" parent="Palmera"]
-transform = Transform( -1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 0, 0, 1, -1.90735e-06, 2.49868, 0 )
-cone = true
-
-[node name="CSGCylinder2" type="CSGCylinder" parent="Palmera"]
-transform = Transform( -0.914381, -0.404855, 0, 0.404855, -0.914381, 0, 0, 0, 1, 1.32562, 4.52182, 0 )
-radius = 0.722833
-height = 3.65598
-cone = true
-
-[node name="CSGCylinder5" type="CSGCylinder" parent="Palmera"]
-transform = Transform( 0.916237, 0.400637, 1.45705e-07, 0.400637, -0.916237, -3.96198e-08, 1.17627e-07, 9.46761e-08, -1, -0.91708, 4.42253, 0 )
-radius = 0.722833
-height = 4.41564
-cone = true
-
-[node name="CSGCylinder3" type="CSGCylinder" parent="Palmera"]
-transform = Transform( -0.00285519, -0.0022981, 0.999993, 0.627012, -0.77901, -9.34547e-09, 0.779005, 0.627008, 0.00366516, 0.0128403, 4.32857, -1.50882 )
-radius = 0.722833
-height = 4.28636
-cone = true
-
-[node name="CSGCylinder4" type="CSGCylinder" parent="Palmera"]
-transform = Transform( 3.40516e-08, 2.74076e-08, -1, 0.558137, -0.829749, -3.73597e-09, -0.829749, -0.558137, -4.35514e-08, 0.0128403, 4.35013, 1.29127 )
-radius = 0.722833
-height = 4.08706
-cone = true
+width = 7.55958
+height = 6.9983
+depth = 3.24198

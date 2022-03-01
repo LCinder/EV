@@ -1,0 +1,22 @@
+[gd_scene format=2]
+
+[node name="Torre18" type="CSGCylinder"]
+transform = Transform( 3, 0, 0, 0, 6, 0, 0, 0, 3, 8.32164, 6.86132, -13.5132 )
+radius = 0.785638
+height = 2.28975
+
+[node name="Torre17" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.833333, 0, 0, 0, 1, -0.0423465, 1.0808, -0.0710335 )
+radius = 0.956205
+height = 0.659563
+
+[node name="Torre4" type="CSGCylinder" parent="Torre17"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2419, 0 )
+operation = 2
+radius = 0.720984
+height = 0.327968
+
+[node name="Torre16" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.833333, 0, 0, 0, 1, -0.0423465, 0.71788, -0.0384665 )
+radius = 0.865391
+height = 0.659563
