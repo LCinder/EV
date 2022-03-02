@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Entrada2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Castle/Entrada2.tscn" type="PackedScene" id=1]
+
 
 [node name="Castillo" type="CSGBox"]
 transform = Transform( 5, 0, 0, 0, 4.358, 0, 0, 0, 5.003, -0.260685, 5.18348, -0.205818 )
