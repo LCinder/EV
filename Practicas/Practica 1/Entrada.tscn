@@ -7,11 +7,11 @@ height = 14.456
 depth = 7.5984
 
 [node name="CSGBox" type="CSGBox" parent="."]
-transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -0.476785, -3.08804, -2.32231 )
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -0.476785, -3.08804, -4.39888 )
 operation = 2
 width = 1.61293
 height = 2.0278
-depth = 3.10083
+depth = 4.79356
 
 [node name="CSGSphere" type="CSGSphere" parent="."]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -0.480146, 0.969021, 3.37144 )

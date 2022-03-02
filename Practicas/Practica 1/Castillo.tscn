@@ -1,34 +1,70 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Entrada2.tscn" type="PackedScene" id=1]
 
 [node name="Castillo" type="CSGBox"]
-transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, -0.260685, 2.92548, -0.205818 )
+transform = Transform( 5, 0, 0, 0, 4.358, 0, 0, 0, 5.003, -0.260685, 5.18348, -0.205818 )
 width = 4.1124
-height = 1.34041
+height = 2.34265
 depth = 4.10064
 
 [node name="CSGBox" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0460079, 0 )
 operation = 2
 width = 3.92001
-height = 1.18072
+height = 2.2566
 depth = 3.82273
 
 [node name="Castillo3" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118165, 0.190521, 0 )
-width = 3.71988
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0393642, 0.18197, 0.0165292 )
+width = 3.9865
 height = 0.0993205
-depth = 4.12935
+depth = 4.03504
 
 [node name="Castillo4" type="CSGBox" parent="Castillo3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0288822, 0 )
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0149191, -0.0288824, 0.448414 )
 operation = 2
-width = 1.6199
+width = 1.16294
 height = 0.340467
 depth = 1.47247
 
 [node name="Castillo5" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.576502, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25176, 0 )
 operation = 2
-width = 3.45021
+width = 4.59132
 height = 0.268663
-depth = 2.60972
+depth = 4.69503
+
+[node name="CSGBox3" type="CSGBox" parent="."]
+transform = Transform( -4.37115e-08, 0, 1, 0, 1, 0, -1, 0, -4.37115e-08, -0.988185, 0.671225, 0.00287689 )
+width = 3.85259
+height = 0.901122
+depth = 0.0845502
+
+[node name="Entrada" parent="CSGBox3" instance=ExtResource( 1 )]
+transform = Transform( 0.2, 0, -8.88178e-16, 0, 0.2, 0, 2.66454e-15, 0, 0.2, 1.04844, -0.0678207, -0.00947249 )
+
+[node name="CSGBox4" type="CSGBox" parent="."]
+transform = Transform( -4.37115e-08, 0, 1, 0, 1, 0, -1, 0, -4.37115e-08, 0.988, 0.671, 0.003 )
+width = 3.85259
+height = 0.901122
+depth = 0.0845502
+
+[node name="Entrada" parent="CSGBox4" instance=ExtResource( 1 )]
+transform = Transform( 0.2, 0, -8.88178e-16, 0, 0.2, 0, 2.66454e-15, 0, 0.2, 1.04844, -0.0678207, -0.00947249 )
+
+[node name="CSGSphere" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.0603372, -0.324977, 1.98338 )
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0497651, -0.194693, 0.431241 )
+width = 1.10385
+height = 0.828995
+depth = 2.91176
+
+[node name="CSGBox2" type="CSGBox" parent="CSGBox2"]
+transform = Transform( 1, 0, 0, 0, 0.823355, 0.567528, 0, -0.567528, 0.823355, 0, 1.19057, 0.714935 )
+operation = 2
+width = 1.22862
+height = 4.4347
+depth = 3.24198

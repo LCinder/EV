@@ -27,7 +27,7 @@ radial_segments = 20
 rings = 20
 
 [node name="CSGMesh2" type="CSGMesh" parent="CSGSphere3"]
-transform = Transform( 1, 2.98314e-08, -5.82077e-11, -2.98605e-08, 1, 0, 1.60071e-10, 1.49012e-08, 1, -1.02454, -0.0414981, 0.00200009 )
+transform = Transform( 1, 2.98896e-08, 5.52973e-10, -2.98023e-08, 1, 0, 1.30967e-10, -1.3411e-07, 1, -1.19444, -0.0414989, 0.00174475 )
 operation = 2
 mesh = SubResource( 1 )
 
