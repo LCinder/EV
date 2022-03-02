@@ -39,6 +39,21 @@ transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, -0.090199, 5
 [node name="Palmera" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.402039, 0, 0, 0, 0.402039, 0, 0, 0, 0.402039, 16.3686, 1.33547, 9.94581 )
 
+[node name="Palmera6" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.402039, 0, 0, 0, 0.402039, 0, 0, 0, 0.402039, -16.369, 1.335, 9.946 )
+
+[node name="Palmera2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.402039, 0, 0, 0, 0.402039, 0, 0, 0, 0.402039, 16.3686, 1.33547, 4.40159 )
+
+[node name="Palmera5" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.402039, 0, 0, 0, 0.402039, 0, 0, 0, 0.402039, -16.369, 1.335, 4.402 )
+
+[node name="Palmera3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.402039, 0, 0, 0, 0.402039, 0, 0, 0, 0.402039, 16.3686, 1.33547, -4.3669 )
+
+[node name="Palmera4" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.402039, 0, 0, 0, 0.402039, 0, 0, 0, 0.402039, -16.369, 1.335, -4.367 )
+
 [node name="Isla" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.177153 )
 width = 114.185
@@ -49,3 +64,8 @@ depth = 158.197
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.59893, 11.4456 )
 width = 13.1551
 height = 3.20947
+
+[node name="Escultura" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023694, 8.17198, 7.35996 )
+height = 3.72897
+cone = true
