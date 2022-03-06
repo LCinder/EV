@@ -15,11 +15,11 @@ transform = Transform( 7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 28.9429, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49797, 15.3497, -13.543 )
 omni_range = 51.4825
 
-[node name="Torreon" parent="." instance=ExtResource( 5 )]
-transform = Transform( 3, 0, 0, 0, 6, 0, 0, 0, 3, 11.785, 7.05817, 1.44954 )
-
 [node name="Torreon2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 3, 0, 0, 0, 6, 0, 0, 0, 3, -11.785, 7.05785, 1.44974 )
+transform = Transform( 5, 0, 0, 0, 8, 0, 0, 0, 5, -12.8672, 9.11656, 1.44974 )
+
+[node name="Torreon3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 5, 0, 0, 0, 8, 0, 0, 0, 5, 12.867, 9.117, 1.45 )
 
 [node name="Torre" parent="." instance=ExtResource( 2 )]
 transform = Transform( 4.99554, 0, 0, 0, 4.35812, 0, 0, 0, 5.00339, -8.63585, 5.1638, 13.4066 )

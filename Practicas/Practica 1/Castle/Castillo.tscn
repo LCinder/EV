@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Castle/Entrada2.tscn" type="PackedScene" id=1]
 
-
 [node name="Castillo" type="CSGBox"]
 transform = Transform( 5, 0, 0, 0, 4.358, 0, 0, 0, 5.003, -0.260685, 5.18348, -0.205818 )
 width = 4.1124
@@ -55,7 +54,7 @@ depth = 0.0845502
 transform = Transform( 0.2, 0, -8.88178e-16, 0, 0.2, 0, 2.66454e-15, 0, 0.2, -0.0373885, -0.0678207, -0.00947255 )
 
 [node name="Entrada" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.0603372, -0.324977, 1.98338 )
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.06, -0.325, 1.993 )
 
 [node name="Entrada2" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.0392828, 0.666473, 1.97728 )
