@@ -23,12 +23,12 @@ func orbit():
 	if Input.is_action_pressed("Down Camera") and y < LIMIT_Y:
 		rotate_object_local(Vector3(1, 0, 0), -SENSIBILITY)
 
-func _orbit_y(s):
+func orbit_y(s):
 	rotate_y(s)
 
-func _orbit_every_second(delta):
+func orbit_every_second(delta):
 	seconds += delta
 
 	if seconds >= 1:
-		_orbit_y(1)
+		orbit_y(1)
 		seconds = 0
