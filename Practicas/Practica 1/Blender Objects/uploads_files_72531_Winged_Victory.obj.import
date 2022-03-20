@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/uploads_files_72531_Winged_Victory.obj-83b4c34165e55fe42d5c74e1a02ea35b.mesh"
+
+[deps]
+
+files=[ "res://.import/uploads_files_72531_Winged_Victory.obj-83b4c34165e55fe42d5c74e1a02ea35b.mesh" ]
+
+source_file="res://Blender Objects/uploads_files_72531_Winged_Victory.obj"
+dest_files=[ "res://.import/uploads_files_72531_Winged_Victory.obj-83b4c34165e55fe42d5c74e1a02ea35b.mesh", "res://.import/uploads_files_72531_Winged_Victory.obj-83b4c34165e55fe42d5c74e1a02ea35b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

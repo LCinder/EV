@@ -29,7 +29,7 @@ height = 0.340467
 depth = 0.972242
 
 [node name="ParteArriba" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25176, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45325, 0 )
 operation = 2
 width = 4.59132
 height = 0.268663
