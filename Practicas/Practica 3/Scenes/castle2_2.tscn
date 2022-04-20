@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://castle2_2.escn" type="PackedScene" id=1]
 [ext_resource path="res://Materiales/metal.tres" type="Material" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Materiales/marble2.tres" type="Material" id=4]
 [ext_resource path="res://Materiales/marble_columnas.tres" type="Material" id=5]
 [ext_resource path="res://Cameras/CameraOrbital.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Materiales/ajedrez.tres" type="Material" id=7]
 [ext_resource path="res://Materiales/Espejo/Metal012_1K_Color.jpg" type="Texture" id=12]
 [ext_resource path="res://Materiales/Espejo/Metal012_1K_NormalDX.jpg" type="Texture" id=13]
 [ext_resource path="res://Materiales/Espejo/Metal012_1K_Roughness.jpg" type="Texture" id=14]
@@ -111,21 +112,39 @@ material/0 = ExtResource( 2 )
 [node name="Campana" parent="." index="27"]
 material/0 = ExtResource( 2 )
 
+[node name="Viga" parent="." index="28"]
+material/0 = ExtResource( 4 )
+
 [node name="Campana001" parent="." index="29"]
 material/0 = ExtResource( 2 )
+
+[node name="Viga001" parent="." index="30"]
+material/0 = ExtResource( 4 )
 
 [node name="Castillo Exterior" parent="." index="31"]
 transform = Transform( 1.13867, 0, 0, 0, 2.36859, 0, 0, 0, 1.10584, 4.14737, 2.39813, 4.0528 )
 material/0 = ExtResource( 3 )
 
+[node name="OmniLight" type="OmniLight" parent="Castillo Exterior" index="0"]
+transform = Transform( 0.878218, 0, 0, 0, 0.422192, 0, 0, 0, 0.90429, -4.56941, 3.90596, 0.934961 )
+light_energy = 0.294
+light_indirect_energy = 0.0
+light_specular = 0.0
+omni_range = 16.9153
+
 [node name="Escaleras" parent="." index="32"]
 material/0 = ExtResource( 5 )
 
 [node name="Pared 1" parent="." index="33"]
+transform = Transform( 0.0632816, 0, 0, 0, 2.15936, 0, 0, 0, 4.38678, 0.703, 2.407, 2.567 )
 material/0 = ExtResource( 3 )
 
 [node name="Pared 1001" parent="." index="34"]
 material/0 = ExtResource( 3 )
+
+[node name="Pisos" parent="." index="35"]
+transform = Transform( 1.11053, 0, 0, 0, 0.114552, 0, 0, 0, 1.07855, 4.113, 2.091, 4.026 )
+material/0 = ExtResource( 7 )
 
 [node name="Escaleras Circulares" parent="." index="36"]
 material/0 = ExtResource( 5 )
@@ -134,7 +153,7 @@ material/0 = ExtResource( 5 )
 material/0 = ExtResource( 2 )
 
 [node name="Puerta Animacion" parent="." index="39"]
-transform = Transform( 0.0660019, 0, 0, 0, 0.640923, 0, 0, 0, 0.46547, 0.555865, 3.02554, 2.16322 )
+transform = Transform( 0.0660019, 0, 0, 0, 0.640923, 0, 0, 0, 0.46547, 0.59959, 2.82125, 2.16322 )
 material/0 = SubResource( 3 )
 
 [node name="Cube010" parent="." index="40"]
@@ -152,6 +171,9 @@ material/0 = ExtResource( 2 )
 
 [node name="Cylinder" parent="." index="44"]
 material/0 = ExtResource( 5 )
+
+[node name="Cube015" parent="." index="45"]
+material/0 = ExtResource( 7 )
 
 [node name="Spatial" parent="." index="46" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85627, 2.78451, 0.209819 )
@@ -213,8 +235,7 @@ light_energy = 6.431
 light_indirect_energy = 0.0
 light_specular = 7.399
 shadow_enabled = true
-shadow_contact = 0.917
-spot_range = 2.525
+spot_range = 2.76647
 spot_attenuation = 0.90125
 spot_angle = 32.25
 spot_angle_attenuation = 4.92458
@@ -225,10 +246,18 @@ light_energy = 8.339
 light_specular = 2.555
 shadow_enabled = true
 shadow_contact = 0.183
-spot_range = 2.84786
+spot_range = 2.8561
 spot_angle = 37.9688
 
-[node name="SpotLight3" type="SpotLight" parent="." index="56"]
+[node name="SpotLight11" type="SpotLight" parent="." index="56"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.05947, 1.8842, 3.80844 )
+light_energy = 8.339
+light_specular = 2.555
+shadow_enabled = true
+spot_range = 2.41957
+spot_angle = 43.904
+
+[node name="SpotLight3" type="SpotLight" parent="." index="57"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.136179, 4.31813, 4.71284 )
 light_energy = 8.339
 light_specular = 2.555
@@ -237,8 +266,8 @@ shadow_contact = 0.183
 spot_range = 2.84786
 spot_angle = 37.9688
 
-[node name="SpotLight10" type="SpotLight" parent="." index="57"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.26352, 4.31813, 6.61063 )
+[node name="SpotLight10" type="SpotLight" parent="." index="58"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.26352, 4.31813, 5.82355 )
 light_energy = 8.339
 light_specular = 2.555
 shadow_enabled = true
@@ -246,11 +275,38 @@ shadow_contact = 0.183
 spot_range = 2.84786
 spot_angle = 37.9688
 
-[node name="SpotLight4" type="SpotLight" parent="." index="58"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.05205, 2.04758, 1.12421 )
+[node name="SpotLight4" type="SpotLight" parent="." index="59"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.05205, 1.93753, 1.55588 )
+light_energy = 12.008
+light_specular = 2.555
+shadow_enabled = true
+shadow_contact = 0.183
+spot_range = 2.04925
+spot_angle = 46.4063
+
+[node name="SpotLight12" type="SpotLight" parent="." index="60"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.75415, 1.93753, 2.45434 )
 light_energy = 8.339
 light_specular = 2.555
 shadow_enabled = true
 shadow_contact = 0.183
 spot_range = 2.84786
 spot_angle = 39.375
+
+[node name="SpotLight13" type="SpotLight" parent="." index="61"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.75415, 1.93753, 5.69798 )
+light_energy = 8.339
+light_specular = 2.555
+shadow_enabled = true
+shadow_contact = 0.183
+spot_range = 2.84786
+spot_angle = 33.319
+
+[node name="SpotLight14" type="SpotLight" parent="." index="62"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.88271, 1.93753, 4.03037 )
+light_energy = 8.339
+light_specular = 2.555
+shadow_enabled = true
+shadow_contact = 0.183
+spot_range = 2.03404
+spot_angle = 25.5808
