@@ -156,8 +156,14 @@ material/0 = ExtResource( 5 )
 [node name="Spatial" parent="." index="46" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85627, 2.78451, 0.209819 )
 
+[node name="Palanca Arriba" parent="." index="47"]
+material/0 = ExtResource( 4 )
+
+[node name="Base Palanca" parent="." index="48"]
+material/0 = ExtResource( 5 )
+
 [node name="SpotLight" type="SpotLight" parent="." index="49"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.98733, 4.31813, 1.98977 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.61394, 4.31813, 1.98977 )
 light_energy = 8.339
 light_specular = 2.555
 shadow_enabled = true
@@ -165,11 +171,86 @@ shadow_contact = 0.183
 spot_range = 2.84786
 spot_angle = 37.9688
 
-[node name="SpotLight2" type="SpotLight" parent="." index="50"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.95538, 4.31813, 4.27753 )
+[node name="SpotLight9" type="SpotLight" parent="." index="50"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.131524, 4.31813, 1.98977 )
 light_energy = 8.339
 light_specular = 2.555
 shadow_enabled = true
 shadow_contact = 0.183
 spot_range = 2.84786
 spot_angle = 37.9688
+
+[node name="SpotLight6" type="SpotLight" parent="." index="51"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.05856, 4.31813, 4.13092 )
+light_energy = 8.339
+light_specular = 2.555
+shadow_enabled = true
+shadow_contact = 0.183
+spot_range = 2.84786
+spot_angle = 37.9688
+
+[node name="SpotLight7" type="SpotLight" parent="." index="52"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.80728, 4.31813, 0.622224 )
+light_energy = 8.339
+light_specular = 2.555
+shadow_enabled = true
+shadow_contact = 0.183
+spot_range = 2.84786
+spot_angle = 37.9688
+
+[node name="SpotLight8" type="SpotLight" parent="." index="53"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.80728, 4.31813, 5.4721 )
+light_energy = 8.339
+light_specular = 2.555
+shadow_enabled = true
+shadow_contact = 0.183
+spot_range = 2.84786
+spot_angle = 37.9688
+
+[node name="SpotLight5" type="SpotLight" parent="." index="54"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.908366, 4.31813, -0.600312 )
+light_energy = 6.431
+light_indirect_energy = 0.0
+light_specular = 7.399
+shadow_enabled = true
+shadow_contact = 0.917
+spot_range = 2.525
+spot_attenuation = 0.90125
+spot_angle = 32.25
+spot_angle_attenuation = 4.92458
+
+[node name="SpotLight2" type="SpotLight" parent="." index="55"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.5261, 4.31813, 4.27753 )
+light_energy = 8.339
+light_specular = 2.555
+shadow_enabled = true
+shadow_contact = 0.183
+spot_range = 2.84786
+spot_angle = 37.9688
+
+[node name="SpotLight3" type="SpotLight" parent="." index="56"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.136179, 4.31813, 4.71284 )
+light_energy = 8.339
+light_specular = 2.555
+shadow_enabled = true
+shadow_contact = 0.183
+spot_range = 2.84786
+spot_angle = 37.9688
+
+[node name="SpotLight10" type="SpotLight" parent="." index="57"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.26352, 4.31813, 6.61063 )
+light_energy = 8.339
+light_specular = 2.555
+shadow_enabled = true
+shadow_contact = 0.183
+spot_range = 2.84786
+spot_angle = 37.9688
+
+[node name="SpotLight4" type="SpotLight" parent="." index="58"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.05205, 2.04758, 1.12421 )
+light_energy = 8.339
+light_specular = 2.555
+shadow_enabled = true
+shadow_contact = 0.183
+spot_range = 2.84786
+spot_angle = 39.375
