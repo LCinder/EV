@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Castle/Entrada2.tscn" type="PackedScene" id=1]
+
+[node name="Castillo" type="CSGBox"]
+transform = Transform( 5, 0, 0, 0, 4.358, 0, 0, 0, 5.003, -0.260685, 5.18348, -0.205818 )
+width = 4.1124
+height = 2.34265
+depth = 4.10064
+
+[node name="_Castillo" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0460079, 0 )
+operation = 2
+width = 3.92001
+height = 2.2566
+depth = 3.82273
+
+[node name="Planta1" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0393642, 0.18197, 0.0165292 )
+width = 3.9865
+height = 0.0993205
+depth = 4.03504
+
+[node name="_Planta1" type="CSGBox" parent="Planta1"]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.0149191, -0.0288823, -0.851657 )
+operation = 2
+width = 1.16294
+height = 0.340467
+depth = 0.972242
+
+[node name="ParteArriba" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45325, 0 )
+operation = 2
+width = 4.59132
+height = 0.268663
+depth = 4.69503
+
+[node name="ParedIzda" type="CSGBox" parent="."]
+transform = Transform( -4.37115e-08, 0, 1, 0, 1, 0, -1, 0, -4.37115e-08, -0.988185, 0.671225, 0.00287689 )
+width = 3.85259
+height = 0.901122
+depth = 0.0845502
+
+[node name="Entrada" parent="ParedIzda" instance=ExtResource( 1 )]
+transform = Transform( 0.2, 0, -1.33227e-15, 0, 0.2, 0, 2.66454e-15, 0, 0.137668, -0.0373885, -0.0678207, -0.00947249 )
+
+[node name="ParedDrcha" type="CSGBox" parent="."]
+transform = Transform( -4.37115e-08, 0, 1, 0, 1, 0, -1, 0, -4.37115e-08, 0.988, 0.671, 0.003 )
+width = 3.85259
+height = 0.901122
+depth = 0.0845502
+
+[node name="Entrada" parent="ParedDrcha" instance=ExtResource( 1 )]
+transform = Transform( 0.2, 0, -8.88178e-16, 0, 0.2, 0, 2.66454e-15, 0, 0.2, -0.0373885, -0.0678207, -0.00947255 )
+
+[node name="Entrada" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.06, -0.325, 1.993 )
+
+[node name="Entrada2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.0392828, 0.666473, 1.97728 )
+
+[node name="Escaleras" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0497651, 0.606639, -0.593206 )
+width = 1.10385
+height = 3.51692
+depth = 1.45438
+
+[node name="_Escaleras" type="CSGBox" parent="Escaleras"]
+transform = Transform( 1, 0, 0, 0, 0.823355, 0.567528, 0, -0.567528, 0.823355, 0, 0.653255, 0.534298 )
+operation = 2
+width = 1.22862
+height = 4.4347
+depth = 3.24198
