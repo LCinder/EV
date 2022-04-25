@@ -7,6 +7,7 @@
 [ext_resource path="res://Materiales/Metal/Metal034_1K_NormalDX.jpg" type="Texture" id=5]
 
 [resource]
+params_diffuse_mode = 2
 albedo_texture = ExtResource( 3 )
 metallic = 1.0
 metallic_texture = ExtResource( 2 )

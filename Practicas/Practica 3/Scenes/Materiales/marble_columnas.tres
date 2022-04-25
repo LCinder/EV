@@ -6,6 +6,7 @@
 [ext_resource path="res://Materiales/Columnas/Marble010_1K_Displacement.jpg" type="Texture" id=4]
 
 [resource]
+params_diffuse_mode = 1
 albedo_texture = ExtResource( 3 )
 roughness_texture = ExtResource( 1 )
 normal_enabled = true
