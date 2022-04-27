@@ -15,9 +15,8 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("Play Luz"):
 		play_light = !play_light
-		print(play_light)
 	
-	if play_light:
-		play("Luz")
-	else:
-		seek(0, true)
+		if play_light:
+			play("Luz")
+		else:
+			stop()

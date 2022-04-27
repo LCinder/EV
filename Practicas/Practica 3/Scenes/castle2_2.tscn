@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://castle2_2.escn" type="PackedScene" id=1]
 [ext_resource path="res://Materiales/metal.tres" type="Material" id=2]
@@ -10,12 +10,14 @@
 [ext_resource path="res://AnimationPlayer.gd" type="Script" id=8]
 [ext_resource path="res://AnimationPlayerPalanca.gd" type="Script" id=9]
 [ext_resource path="res://AnimationPlayerLuz.gd" type="Script" id=10]
-[ext_resource path="res://uploads_files_2581270_Wall+Torch+01+Final.escn" type="PackedScene" id=11]
+[ext_resource path="res://syferfontein_0d_clear_1k.hdr" type="Texture" id=11]
 [ext_resource path="res://Materiales/Espejo/Metal012_1K_Color.jpg" type="Texture" id=12]
 [ext_resource path="res://Materiales/Espejo/Metal012_1K_NormalDX.jpg" type="Texture" id=13]
 [ext_resource path="res://Materiales/Espejo/Metal012_1K_Roughness.jpg" type="Texture" id=14]
 [ext_resource path="res://Materiales/Espejo/Metal012_1K_Metalness.jpg" type="Texture" id=15]
 [ext_resource path="res://Materiales/Espejo/Metal012_1K_Displacement.jpg" type="Texture" id=16]
+[ext_resource path="res://castleexterior2.tscn" type="PackedScene" id=17]
+[ext_resource path="res://floor.tscn" type="PackedScene" id=18]
 
 [sub_resource type="SpatialMaterial" id=3]
 params_diffuse_mode = 2
@@ -34,76 +36,7 @@ depth_flip_tangent = false
 depth_flip_binormal = false
 depth_texture = ExtResource( 16 )
 
-[sub_resource type="Animation" id=5]
-resource_name = "Luz"
-length = 2.0
-loop = true
-step = 1.0
-tracks/0/type = "bezier"
-tracks/0/path = NodePath(".:light_energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 11, -0.25, 0, 0, -2.46711, 0.199028, 0, -1.71351, 0.666274, 1.01253, 11, -0.333273, -9.34639, 0.25, 0 ),
-"times": PoolRealArray( 0, 1, 2 )
-}
-tracks/1/type = "transform"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = PoolRealArray(  )
-
 [sub_resource type="Animation" id=4]
-resource_name = "Luz"
-length = 2.0
-loop = true
-step = 1.0
-tracks/0/type = "bezier"
-tracks/0/path = NodePath(".:light_energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 11, -0.25, 0, 0, -2.46711, 0.199028, 0, -1.71351, 0.666274, 1.01253, 11, -0.333273, -9.34639, 0.25, 0 ),
-"times": PoolRealArray( 0, 1, 2 )
-}
-tracks/1/type = "transform"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = PoolRealArray(  )
-
-[sub_resource type="Animation" id=7]
-resource_name = "Luz"
-length = 2.0
-loop = true
-step = 1.0
-tracks/0/type = "bezier"
-tracks/0/path = NodePath(".:light_energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 11, -0.25, 0, 0, -2.46711, 0.199028, 0, -1.71351, 0.666274, 1.01253, 11, -0.333273, -9.34639, 0.25, 0 ),
-"times": PoolRealArray( 0, 1, 2 )
-}
-tracks/1/type = "transform"
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = PoolRealArray(  )
-
-[sub_resource type="Animation" id=8]
 resource_name = "Luz"
 length = 2.0
 loop = true
@@ -148,6 +81,18 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = PoolRealArray(  )
+
+[sub_resource type="PanoramaSky" id=6]
+radiance_size = 1
+panorama = ExtResource( 11 )
+
+[sub_resource type="Environment" id=7]
+background_mode = 2
+background_sky = SubResource( 6 )
+background_sky_custom_fov = 44.2
+background_energy = 0.12
+ambient_light_energy = 0.0
+ss_reflections_enabled = true
 
 [node name="castle2_2" instance=ExtResource( 1 )]
 
@@ -243,81 +188,78 @@ material/0 = ExtResource( 4 )
 
 [node name="Castillo Exterior" parent="." index="31"]
 transform = Transform( 1.13867, 0, 0, 0, 2.36859, 0, 0, 0, 1.10584, 4.14737, 2.39813, 4.0528 )
+visible = false
 material/0 = ExtResource( 3 )
 
-[node name="Escaleras" parent="." index="32"]
+[node name="castleexterior2" parent="." index="32" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, 0, 0 )
+
+[node name="Escaleras" parent="." index="33"]
 material/0 = ExtResource( 5 )
 
-[node name="Pared 1" parent="." index="33"]
+[node name="Pared 1" parent="." index="34"]
 transform = Transform( 0.0632816, 0, 0, 0, 2.15936, 0, 0, 0, 4.38678, 0.720916, 2.40687, 2.56738 )
+visible = false
 material/0 = ExtResource( 3 )
 
-[node name="Pared 1001" parent="." index="34"]
+[node name="Pared 1001" parent="." index="35"]
+transform = Transform( -2.76613e-09, 0, 1.77496, 0, 1.03011, 0, -0.0632816, 0, -7.7586e-08, -1.13057, 1.16504, 5.69868 )
 material/0 = ExtResource( 3 )
 
-[node name="Pisos" parent="." index="35"]
-transform = Transform( 1.11053, 0, 0, 0, 0.114552, 0, 0, 0, 1.07855, 4.113, 2.091, 4.026 )
+[node name="Pisos" parent="." index="36"]
+transform = Transform( 1.1, 0, 0, 0, 0.115, 0, 0, 0, 1.079, 4.114, 2.091, 4.026 )
 material/0 = ExtResource( 7 )
 
-[node name="Escaleras Circulares" parent="." index="36"]
+[node name="Escaleras Circulares" parent="." index="37"]
 material/0 = ExtResource( 5 )
 
-[node name="Cilindro" parent="." index="38"]
+[node name="Cilindro" parent="." index="39"]
 material/0 = ExtResource( 2 )
 
-[node name="Puerta Animacion" parent="." index="39"]
+[node name="Puerta Animacion" parent="." index="40"]
 transform = Transform( 0.0660019, 0, 0, 0, 0.640923, 0, 0, 0, 0.46547, 0.59959, 3.71508, 2.16322 )
 material/0 = SubResource( 3 )
 
 [node name="AnimationPlayer" parent="Puerta Animacion" index="0"]
 script = ExtResource( 8 )
 
-[node name="Cube010" parent="." index="40"]
+[node name="Cube010" parent="." index="41"]
 material/0 = ExtResource( 2 )
 
-[node name="Cube011" parent="." index="41"]
+[node name="Cube011" parent="." index="42"]
 transform = Transform( -0.221437, 0, -8.11697e-09, 0, 0.694055, 0, 1.93586e-08, 0, -0.0928473, -0.905461, 3.58969, -1.18002 )
 material/0 = ExtResource( 2 )
 
-[node name="Cube013" parent="." index="42"]
+[node name="Cube013" parent="." index="43"]
 material/0 = ExtResource( 2 )
 
-[node name="Cube014" parent="." index="43"]
+[node name="Cube014" parent="." index="44"]
 material/0 = ExtResource( 2 )
 
-[node name="Cylinder" parent="." index="44"]
+[node name="Cylinder" parent="." index="45"]
 material/0 = ExtResource( 5 )
 
-[node name="Cube015" parent="." index="45"]
+[node name="Cube015" parent="." index="46"]
 material/0 = ExtResource( 7 )
 
-[node name="Spatial" parent="." index="46" instance=ExtResource( 6 )]
+[node name="Camera" type="Camera" parent="." index="47"]
+transform = Transform( 0.897982, 0, -0.440033, 0, 1, 0, 0.440033, 0, 0.897982, -1.82454, 3.6532, 6.38028 )
+current = true
+
+[node name="Spatial" parent="." index="48" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85627, 2.78451, 0.209819 )
 
-[node name="Palanca Arriba" parent="." index="47"]
+[node name="Palanca Arriba" parent="." index="49"]
 transform = Transform( 0.0157885, 0, 0, 0, 0.0907547, 0.00943545, 0, -0.105976, 0.00808027, -2.13886, 2.24158, -0.244309 )
 material/0 = ExtResource( 4 )
 
 [node name="AnimationPlayer" parent="Palanca Arriba" index="0"]
 script = ExtResource( 9 )
 
-[node name="Base Palanca" parent="." index="48"]
+[node name="Base Palanca" parent="." index="50"]
 material/0 = ExtResource( 5 )
 
-[node name="SpotLight" type="SpotLight" parent="." index="49"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -3.04127, 2.83417, 1.98977 )
-light_energy = 11.0
-light_specular = 2.555
-shadow_enabled = true
-shadow_contact = 0.183
-spot_range = 2.84786
-spot_angle = 37.9688
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SpotLight" index="0"]
-anims/Luz = SubResource( 5 )
-script = ExtResource( 10 )
-
-[node name="SpotLight6" type="SpotLight" parent="." index="50"]
+[node name="SpotLight6" type="SpotLight" parent="." index="51"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.05856, 4.31813, 4.13092 )
 light_energy = 8.339
 light_specular = 2.555
@@ -326,16 +268,16 @@ shadow_contact = 0.183
 spot_range = 2.84786
 spot_angle = 37.9688
 
-[node name="SpotLight7" type="SpotLight" parent="." index="51"]
+[node name="SpotLight7" type="SpotLight" parent="." index="52"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.80728, 4.31813, 0.622224 )
 light_energy = 8.339
 light_specular = 2.555
 shadow_enabled = true
-shadow_contact = 0.183
+shadow_contact = 0.357
 spot_range = 2.84786
 spot_angle = 37.9688
 
-[node name="SpotLight8" type="SpotLight" parent="." index="52"]
+[node name="SpotLight8" type="SpotLight" parent="." index="53"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.80728, 4.31813, 5.4721 )
 light_energy = 8.339
 light_specular = 2.555
@@ -344,7 +286,7 @@ shadow_contact = 0.183
 spot_range = 2.84786
 spot_angle = 37.9688
 
-[node name="SpotLight5" type="SpotLight" parent="." index="53"]
+[node name="SpotLight5" type="SpotLight" parent="." index="54"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.908366, 4.31813, -0.600312 )
 light_energy = 11.0
 light_indirect_energy = 0.0
@@ -352,113 +294,270 @@ light_specular = 7.399
 shadow_enabled = true
 spot_range = 2.76647
 spot_attenuation = 0.450625
-spot_angle = 28.95
+spot_angle = 32.433
 spot_angle_attenuation = 4.92458
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SpotLight5" index="0"]
 anims/Luz = SubResource( 4 )
 script = ExtResource( 10 )
 
-[node name="SpotLight2" type="SpotLight" parent="." index="54"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.5261, 4.31813, 4.27753 )
+[node name="OmniLight" type="OmniLight" parent="." index="55"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.42407, 2.73004, 2.19809 )
+light_energy = 2.193
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+shadow_contact = 2.51
+omni_range = 2.76
+omni_attenuation = 1.6245
+omni_shadow_detail = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="OmniLight" index="0"]
+script = ExtResource( 10 )
+
+[node name="OmniLight3" type="OmniLight" parent="." index="56"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -4.31973, 3.58267, 4.15412 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+shadow_bias = 5.715
+shadow_contact = 4.037
+omni_range = 2.20775
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight4" type="OmniLight" parent="." index="57"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.000590265, 3.09162, 6.15077 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+shadow_contact = 0.696
+omni_range = 1.80007
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight5" type="OmniLight" parent="." index="58"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.53564, 1.38163, 1.95664 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 8.28
+shadow_enabled = true
+shadow_contact = 0.734
+omni_range = 2.30155
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight24" type="OmniLight" parent="." index="59"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00560784, 1.66215, 0.100981 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 4.404
+shadow_enabled = true
+shadow_contact = 0.734
+omni_range = 2.85405
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight16" type="OmniLight" parent="." index="60"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.67118, 1.02603, 4.08559 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+omni_range = 1.37767
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight23" type="OmniLight" parent="." index="61"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -4.38553, 1.56307, 4.08559 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+omni_range = 1.37767
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight19" type="OmniLight" parent="." index="62"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0311713, 1.02603, 4.08559 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+omni_range = 1.37767
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight20" type="OmniLight" parent="." index="63"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4.38057, 1.02603, 4.81452 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+omni_range = 1.37767
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight21" type="OmniLight" parent="." index="64"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.77968, 1.02603, 6.3518 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+omni_range = 1.37767
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight22" type="OmniLight" parent="." index="65"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.46751, 1.02603, 6.3518 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+omni_range = 1.37767
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight7" type="OmniLight" parent="." index="66"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.85258, 3.48025, -2.23098 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+omni_range = 2.05474
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight9" type="OmniLight" parent="." index="67"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -3.28483, 3.48025, -0.121605 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+omni_range = 1.3862
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight11" type="OmniLight" parent="." index="68"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -5.62026, 3.48025, 4.28609 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+shadow_contact = 3.043
+omni_range = 1.81744
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight12" type="OmniLight" parent="." index="69"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 5.47684, 3.48, 4.286 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+omni_range = 2.87996
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight13" type="OmniLight" parent="." index="70"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 5.47684, 3.48, 4.286 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+omni_range = 2.87996
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight14" type="OmniLight" parent="." index="71"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0208614, 6.96125, 2.07325 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+omni_range = 3.99869
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight15" type="OmniLight" parent="." index="72"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00627652, 6.71043, -2.08466 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+omni_range = 3.99869
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight10" type="OmniLight" parent="." index="73"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.285, 3.48, -0.122 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+omni_range = 2.87996
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight8" type="OmniLight" parent="." index="74"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.853, 3.48, -2.231 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+omni_range = 2.05474
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight17" type="OmniLight" parent="." index="75"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.10839, 0.93295, -2.231 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+omni_range = 2.05474
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight18" type="OmniLight" parent="." index="76"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.804743, 0.933, -2.231 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+omni_range = 2.05474
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight6" type="OmniLight" parent="." index="77"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.53564, 1.38163, -0.811553 )
+light_energy = 1.587
+light_indirect_energy = 4.229
+light_specular = 7.546
+shadow_enabled = true
+omni_range = 1.37767
+omni_attenuation = 0.535886
+omni_shadow_detail = 0
+
+[node name="OmniLight2" type="OmniLight" parent="." index="78"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.457656, 3.02697, 3.4703 )
 light_energy = 11.0
-light_specular = 2.555
+light_indirect_energy = 4.229
+light_specular = 7.546
 shadow_enabled = true
-shadow_contact = 0.183
-spot_range = 2.8561
-spot_angle = 37.9688
+shadow_contact = 3.211
+omni_range = 1.69037
+omni_attenuation = 2.46228
+omni_shadow_detail = 0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SpotLight2" index="0"]
-anims/Luz = SubResource( 7 )
-script = ExtResource( 10 )
-
-[node name="SpotLight11" type="SpotLight" parent="." index="55"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.05947, 1.8842, 3.80844 )
-light_energy = 8.339
-light_specular = 2.555
-shadow_enabled = true
-spot_range = 2.41957
-spot_angle = 43.904
-
-[node name="SpotLight3" type="SpotLight" parent="." index="56"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.136179, 4.31813, 4.71284 )
-light_energy = 10.9412
-light_specular = 2.555
-shadow_enabled = true
-shadow_contact = 0.183
-spot_range = 2.84786
-spot_angle = 37.9688
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SpotLight3" index="0"]
-anims/Luz = SubResource( 8 )
-script = ExtResource( 10 )
-
-[node name="SpotLight10" type="SpotLight" parent="." index="57"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.26352, 4.31813, 5.82355 )
-light_energy = 10.9412
-light_specular = 2.555
-shadow_enabled = true
-shadow_contact = 0.183
-spot_range = 2.84786
-spot_angle = 37.9688
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SpotLight10" index="0"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="OmniLight2" index="0"]
 anims/Luz = SubResource( 9 )
 script = ExtResource( 10 )
 
-[node name="SpotLight4" type="SpotLight" parent="." index="58"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.05205, 1.93753, 1.55588 )
-light_energy = 12.008
-light_specular = 2.555
-shadow_enabled = true
-shadow_contact = 0.183
-spot_range = 2.04925
-spot_angle = 46.4063
+[node name="floor" parent="." index="79" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9816, 0 )
 
-[node name="SpotLight12" type="SpotLight" parent="." index="59"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.75415, 1.93753, 2.45434 )
-light_energy = 8.339
-light_specular = 2.555
-shadow_enabled = true
-shadow_contact = 0.183
-spot_range = 2.84786
-spot_angle = 39.375
-
-[node name="SpotLight13" type="SpotLight" parent="." index="60"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.75415, 1.93753, 5.69798 )
-light_energy = 8.339
-light_specular = 2.555
-shadow_enabled = true
-shadow_contact = 0.183
-spot_range = 2.84786
-spot_angle = 33.319
-
-[node name="SpotLight14" type="SpotLight" parent="." index="61"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.88271, 1.93753, 4.03037 )
-light_energy = 8.339
-light_specular = 2.555
-shadow_enabled = true
-shadow_contact = 0.183
-spot_range = 2.03404
-spot_angle = 25.5808
-
-[node name="OmniLight" type="OmniLight" parent="." index="62"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.79387, 3.84344, 3.03801 )
-light_energy = 1.587
-light_indirect_energy = 4.229
-light_specular = 7.546
-omni_range = 0.960317
-omni_attenuation = 0.535886
-omni_shadow_detail = 0
-
-[node name="uploads_files_2581270_Wall+Torch+01+Final" parent="." index="63" instance=ExtResource( 11 )]
-transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -2.91815, 3.69263, 3.21178 )
-
-[node name="OmniLight2" type="OmniLight" parent="." index="64"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.343734, 3.90617, 3.03777 )
-light_energy = 1.587
-light_indirect_energy = 4.229
-light_specular = 7.546
-omni_range = 0.960317
-omni_attenuation = 0.535886
-omni_shadow_detail = 0
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="80"]
+environment = SubResource( 7 )

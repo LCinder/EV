@@ -10,7 +10,7 @@
 albedo_texture = ExtResource( 3 )
 roughness_texture = ExtResource( 4 )
 normal_enabled = true
-normal_scale = -9.41
+normal_scale = -10.18
 normal_texture = ExtResource( 1 )
 ao_enabled = true
 ao_light_affect = 0.0
@@ -25,4 +25,3 @@ depth_max_layers = 32
 depth_flip_tangent = true
 depth_flip_binormal = true
 depth_texture = ExtResource( 5 )
-uv1_scale = Vector3( 3, 1, 1 )
