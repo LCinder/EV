@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://uploads_files_2581270_Wall+Torch+01+Final.escn" type="PackedScene" id=1]
-
-[node name="uploads_files_2581270_Wall+Torch+01+Final" instance=ExtResource( 1 )]
