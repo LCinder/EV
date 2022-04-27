@@ -1,11 +1,10 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://castle2_2.escn" type="PackedScene" id=1]
 [ext_resource path="res://Materiales/metal.tres" type="Material" id=2]
 [ext_resource path="res://Materiales/bricks2.tres" type="Material" id=3]
 [ext_resource path="res://Materiales/marble2.tres" type="Material" id=4]
 [ext_resource path="res://Materiales/marble_columnas.tres" type="Material" id=5]
-[ext_resource path="res://Cameras/CameraOrbital.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Materiales/ajedrez.tres" type="Material" id=7]
 [ext_resource path="res://AnimationPlayer.gd" type="Script" id=8]
 [ext_resource path="res://AnimationPlayerPalanca.gd" type="Script" id=9]
@@ -305,26 +304,23 @@ material/0 = ExtResource( 7 )
 transform = Transform( 0.939639, 0.107313, -0.324904, 0, 0.949546, 0.313628, 0.342168, -0.294697, 0.89223, -2.05849, 3.6532, 6.14054 )
 current = true
 
-[node name="Spatial" parent="." index="48" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85627, 2.78451, 0.209819 )
-
-[node name="Palanca Arriba" parent="." index="49"]
+[node name="Palanca Arriba" parent="." index="48"]
 transform = Transform( 0.0157885, 0, 0, 0, 0.0907547, 0.00943545, 0, -0.105976, 0.00808027, -2.13886, 2.24158, -0.244309 )
 material/0 = ExtResource( 4 )
 
 [node name="AnimationPlayer" parent="Palanca Arriba" index="0"]
 script = ExtResource( 9 )
 
-[node name="Base Palanca" parent="." index="50"]
+[node name="Base Palanca" parent="." index="49"]
 material/0 = ExtResource( 5 )
 
-[node name="floor" parent="." index="51" instance=ExtResource( 18 )]
+[node name="floor" parent="." index="50" instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9816, 0 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="52"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="51"]
 environment = SubResource( 7 )
 
-[node name="OmniLight" type="OmniLight" parent="." index="53"]
+[node name="OmniLight" type="OmniLight" parent="." index="52"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47612, 3.50549, 2.06353 )
 light_energy = 1.587
 shadow_enabled = true
@@ -336,7 +332,7 @@ omni_attenuation = 0.757859
 anims/Luz = SubResource( 8 )
 script = ExtResource( 10 )
 
-[node name="OmniLight3" type="OmniLight" parent="." index="54"]
+[node name="OmniLight3" type="OmniLight" parent="." index="53"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.95903, 3.50549, 4.78785 )
 light_energy = 1.587
 shadow_enabled = true
@@ -348,7 +344,7 @@ omni_attenuation = 0.392293
 anims/Luz = SubResource( 9 )
 script = ExtResource( 10 )
 
-[node name="OmniLight5" type="OmniLight" parent="." index="55"]
+[node name="OmniLight5" type="OmniLight" parent="." index="54"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.119847, 3.15782, 3.74693 )
 light_energy = 1.587
 shadow_enabled = true
@@ -360,7 +356,7 @@ omni_attenuation = 0.757859
 anims/Luz = SubResource( 11 )
 script = ExtResource( 10 )
 
-[node name="OmniLight26" type="OmniLight" parent="." index="56"]
+[node name="OmniLight26" type="OmniLight" parent="." index="55"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.119847, 3.15782, 6.15288 )
 light_energy = 1.587
 shadow_enabled = true
@@ -372,14 +368,14 @@ omni_attenuation = 0.757859
 anims/Luz = SubResource( 15 )
 script = ExtResource( 10 )
 
-[node name="OmniLight8" type="OmniLight" parent="." index="57"]
+[node name="OmniLight8" type="OmniLight" parent="." index="56"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.64515, 3.15782, 4.03758 )
 light_energy = 1.587
 shadow_enabled = true
 omni_range = 2.362
 omni_attenuation = 0.757859
 
-[node name="OmniLight2" type="OmniLight" parent="." index="58"]
+[node name="OmniLight2" type="OmniLight" parent="." index="57"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0311466, 3.50549, 0.849113 )
 light_energy = 1.587
 shadow_enabled = true
@@ -390,7 +386,7 @@ omni_attenuation = 0.757859
 anims/Luz = SubResource( 12 )
 script = ExtResource( 10 )
 
-[node name="OmniLight6" type="OmniLight" parent="." index="59"]
+[node name="OmniLight6" type="OmniLight" parent="." index="58"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0125064, 3.68577, -0.184128 )
 light_energy = 1.587
 light_specular = 2.702
@@ -402,7 +398,7 @@ omni_attenuation = 0.392292
 anims/Luz = SubResource( 13 )
 script = ExtResource( 10 )
 
-[node name="OmniLight9" type="OmniLight" parent="." index="60"]
+[node name="OmniLight9" type="OmniLight" parent="." index="59"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.255732, 1.08325, -0.184128 )
 light_energy = 0.853
 light_specular = 2.702
@@ -411,7 +407,7 @@ shadow_contact = 0.696
 omni_range = 1.99669
 omni_attenuation = 0.683021
 
-[node name="OmniLight17" type="OmniLight" parent="." index="61"]
+[node name="OmniLight17" type="OmniLight" parent="." index="60"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.18956, 1.08325, -2.43528 )
 light_energy = 0.853
 light_specular = 2.702
@@ -420,7 +416,7 @@ shadow_contact = 0.734
 omni_range = 1.99669
 omni_attenuation = 0.683021
 
-[node name="OmniLight20" type="OmniLight" parent="." index="62"]
+[node name="OmniLight20" type="OmniLight" parent="." index="61"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.882496, 3.86097, -2.43528 )
 light_energy = 0.853
 light_specular = 2.702
@@ -429,7 +425,7 @@ shadow_contact = 0.783
 omni_range = 1.99669
 omni_attenuation = 0.683021
 
-[node name="OmniLight21" type="OmniLight" parent="." index="63"]
+[node name="OmniLight21" type="OmniLight" parent="." index="62"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0707223, 6.7217, -2.43528 )
 light_energy = 0.853
 light_specular = 2.702
@@ -438,7 +434,7 @@ shadow_contact = 1.652
 omni_range = 1.99669
 omni_attenuation = 0.683021
 
-[node name="OmniLight22" type="OmniLight" parent="." index="64"]
+[node name="OmniLight22" type="OmniLight" parent="." index="63"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.75323, 3.36896, -0.461444 )
 light_energy = 0.853
 light_specular = 2.702
@@ -446,7 +442,7 @@ shadow_enabled = true
 omni_range = 1.99669
 omni_attenuation = 0.683021
 
-[node name="OmniLight23" type="OmniLight" parent="." index="65"]
+[node name="OmniLight23" type="OmniLight" parent="." index="64"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.88786, 3.36896, 3.78337 )
 light_energy = 0.853
 light_specular = 2.702
@@ -454,7 +450,7 @@ shadow_enabled = true
 omni_range = 1.99669
 omni_attenuation = 0.683021
 
-[node name="OmniLight24" type="OmniLight" parent="." index="66"]
+[node name="OmniLight24" type="OmniLight" parent="." index="65"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.85613, 3.36896, 3.78338 )
 light_energy = 0.853
 light_specular = 2.702
@@ -462,7 +458,7 @@ shadow_enabled = true
 omni_range = 1.99669
 omni_attenuation = 0.683021
 
-[node name="OmniLight25" type="OmniLight" parent="." index="67"]
+[node name="OmniLight25" type="OmniLight" parent="." index="66"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.77759, 3.36896, -0.692725 )
 light_energy = 0.853
 light_specular = 2.702
@@ -470,7 +466,7 @@ shadow_enabled = true
 omni_range = 1.99669
 omni_attenuation = 0.683021
 
-[node name="OmniLight18" type="OmniLight" parent="." index="68"]
+[node name="OmniLight18" type="OmniLight" parent="." index="67"]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.2457, 1.08325, -2.43528 )
 light_energy = 0.853
 light_specular = 2.702
@@ -479,7 +475,7 @@ shadow_contact = 1.743
 omni_range = 1.99669
 omni_attenuation = 0.683021
 
-[node name="OmniLight19" type="OmniLight" parent="." index="69"]
+[node name="OmniLight19" type="OmniLight" parent="." index="68"]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.2457, 3.84378, -2.43528 )
 light_energy = 0.853
 light_specular = 2.702
@@ -488,7 +484,7 @@ shadow_contact = 1.391
 omni_range = 1.99669
 omni_attenuation = 0.683021
 
-[node name="OmniLight12" type="OmniLight" parent="." index="70"]
+[node name="OmniLight12" type="OmniLight" parent="." index="69"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.255732, 1.08325, 2.63302 )
 light_energy = 0.853
 light_specular = 2.702
@@ -497,7 +493,7 @@ shadow_contact = 0.783
 omni_range = 1.99669
 omni_attenuation = 0.683021
 
-[node name="OmniLight13" type="OmniLight" parent="." index="71"]
+[node name="OmniLight13" type="OmniLight" parent="." index="70"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.56571, 1.08325, 3.63736 )
 light_energy = 0.853
 light_specular = 2.702
@@ -506,7 +502,7 @@ shadow_contact = 1.217
 omni_range = 1.99669
 omni_attenuation = 0.683021
 
-[node name="OmniLight15" type="OmniLight" parent="." index="72"]
+[node name="OmniLight15" type="OmniLight" parent="." index="71"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.7336, 1.08325, 6.71582 )
 light_energy = 0.853
 light_specular = 2.702
@@ -515,7 +511,7 @@ shadow_contact = 1.559
 omni_range = 1.99669
 omni_attenuation = 0.683021
 
-[node name="OmniLight16" type="OmniLight" parent="." index="73"]
+[node name="OmniLight16" type="OmniLight" parent="." index="72"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.37381, 1.44144, 6.12159 )
 light_energy = 0.853
 light_specular = 2.702
@@ -523,7 +519,7 @@ shadow_enabled = true
 omni_range = 1.99669
 omni_attenuation = 0.683021
 
-[node name="OmniLight14" type="OmniLight" parent="." index="74"]
+[node name="OmniLight14" type="OmniLight" parent="." index="73"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.46893, 1.08325, 0.233755 )
 light_energy = 0.853
 light_specular = 2.702
@@ -532,7 +528,7 @@ shadow_contact = 1.304
 omni_range = 1.99669
 omni_attenuation = 0.683021
 
-[node name="OmniLight10" type="OmniLight" parent="." index="75"]
+[node name="OmniLight10" type="OmniLight" parent="." index="74"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21302, 1.08325, -0.184128 )
 light_energy = 0.853
 light_specular = 2.702
@@ -541,7 +537,7 @@ shadow_contact = 1.101
 omni_range = 1.99669
 omni_attenuation = 0.683021
 
-[node name="OmniLight11" type="OmniLight" parent="." index="76"]
+[node name="OmniLight11" type="OmniLight" parent="." index="75"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21302, 1.08325, 3.73025 )
 light_energy = 0.853
 light_specular = 2.702
@@ -550,7 +546,7 @@ shadow_contact = 0.174
 omni_range = 1.99669
 omni_attenuation = 0.683021
 
-[node name="OmniLight7" type="OmniLight" parent="." index="77"]
+[node name="OmniLight7" type="OmniLight" parent="." index="76"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17568, 3.68577, -0.184128 )
 light_energy = 1.587
 light_specular = 2.702
