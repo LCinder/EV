@@ -4,7 +4,8 @@
 code = "shader_type spatial;
 uniform sampler2D textura;
 uniform float h = 0.3;
- 
+ // Derivada: Restar a un pixel el de al lado
+
 void vertex() {
 	float h2 = texture(textura, vec2(UV.x+TIME*0.07, UV.y)).r;
 	VERTEX += vec3(0, h*h2, 0);
