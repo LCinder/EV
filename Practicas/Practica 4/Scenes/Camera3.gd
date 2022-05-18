@@ -18,3 +18,4 @@ func _ready():
 
 func _on_Test_camera_2():
 	set_current(true)
+	

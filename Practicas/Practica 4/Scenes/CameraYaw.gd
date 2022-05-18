@@ -13,6 +13,10 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
+func _on_Test_camera_player():
+	set_current(true)
+
+
 func _input(event):
 	if Input.is_action_just_pressed("ui_cancel"):
 			get_tree().quit()

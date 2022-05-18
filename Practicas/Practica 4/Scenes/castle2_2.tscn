@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://castle2_2.escn" type="PackedScene" id=1]
 [ext_resource path="res://Materiales/metal.tres" type="Material" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Test.gd" type="Script" id=19]
 [ext_resource path="res://Camera2.gd" type="Script" id=20]
 [ext_resource path="res://Camera3.gd" type="Script" id=21]
+[ext_resource path="res://Label.gd" type="Script" id=22]
 
 [sub_resource type="SpatialMaterial" id=3]
 params_diffuse_mode = 2
@@ -549,20 +550,7 @@ shadow_contact = 0.174
 omni_range = 1.99669
 omni_attenuation = 0.683021
 
-[node name="Label" type="Label" parent="." index="76"]
-margin_left = 16.0
-margin_top = 19.0
-margin_right = 56.0
-margin_bottom = 33.0
-text = "Move Forward: W
-Move Backward: S
-Move Left: A
-Move Forward: D"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="OmniLight7" type="OmniLight" parent="." index="77"]
+[node name="OmniLight7" type="OmniLight" parent="." index="76"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17568, 3.68577, -0.184128 )
 light_energy = 1.587
 light_specular = 2.702
@@ -575,16 +563,34 @@ omni_attenuation = 0.554785
 anims/Luz = SubResource( 14 )
 script = ExtResource( 10 )
 
-[node name="Player" type="Spatial" parent="." index="78"]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.01952, 0 )
+[node name="Control" type="Control" parent="." index="77"]
+margin_left = 16.0
+margin_top = 19.0
+margin_right = 56.0
+margin_bottom = 59.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="CameraPlayer" type="Camera" parent="Player" index="0"]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.591253, 1.975 )
-current = true
-near = 0.49
-script = ExtResource( 6 )
+[node name="Label" type="Label" parent="Control" index="0"]
+margin_right = 114.0
+margin_bottom = 65.0
+text = "Moverse Hacia Delante: W
+Moverse Hacia Atras: S
+Moverse Hacia Izqda A
+Moverse Hacia Dcha D
 
-[node name="Test" type="Control" parent="." index="79"]
+Camara 1:  1
+Camara 2 : 2
+Camara Player: 3
+
+Mostrar/Ocultar Tutorial: T"
+script = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Test" type="Control" parent="." index="78"]
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 19 )
@@ -600,6 +606,16 @@ script = ExtResource( 20 )
 transform = Transform( -0.858163, 0.177251, 0.481807, 0, 0.938505, -0.345265, -0.513377, -0.296294, -0.805391, 4.50339, 1.29408, -7.12812 )
 script = ExtResource( 21 )
 
+[node name="Player" type="Spatial" parent="Test" index="2"]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.01952, 0 )
+
+[node name="CameraPlayer" type="Camera" parent="Test/Player" index="0"]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.591253, 1.975 )
+current = true
+near = 0.49
+script = ExtResource( 6 )
+
 [connection signal="camera_1" from="Test" to="Puerta Animacion/AnimationPlayer" method="_on_Test_camera_1"]
 [connection signal="camera_1" from="Test" to="Test/Camera2" method="_on_Test_camera_1"]
 [connection signal="camera_2" from="Test" to="Test/Camera3" method="_on_Test_camera_2"]
+[connection signal="camera_player" from="Test" to="Test/Player/CameraPlayer" method="_on_Test_camera_player"]
