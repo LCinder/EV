@@ -15,9 +15,15 @@ void vertex() {
 }
 
 void fragment() {
+	float size = 1.0/32.0;
 	ALBEDO = texture(textura, UV).rgb;
 	
-	NORMALMAP = texture(normalmap, tex_position).xyz;
+	float avg = (ALBEDO.x + ALBEDO.y + ALBEDO.z)/3.0;
+	
+	ALBEDO = texture(textura, UV+vec2(size, 0.0)).rgb  - texture(textura, UV).rgb;
+	
+	NORMALMAP = texture(normalmap, tex_position).xyz * vec3(2.0,2.0,1.0) - vec3(1.0,1.0,0.0);
+	NORMALMAP_DEPTH = 1.0;
 }"
 
 [sub_resource type="OpenSimplexNoise" id=4]
