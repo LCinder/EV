@@ -580,7 +580,7 @@ Moverse Hacia Atras: S
 Moverse Hacia Izqda A
 Moverse Hacia Dcha D
 
-Camara Player: Player
+Camara Player: 1
 Camara 2 : 2
 Camara 3: 3
 
@@ -606,7 +606,7 @@ script = ExtResource( 20 )
 transform = Transform( -0.858163, 0.177251, 0.481807, 0, 0.938505, -0.345265, -0.513377, -0.296294, -0.805391, 4.50339, 1.29408, -7.12812 )
 script = ExtResource( 21 )
 
-[node name="Player" type="Spatial" parent="Test" index="2"]
+[node name="Player" type="Position3D" parent="Test" index="2"]
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.01952, 0 )
 
 [node name="CameraPlayer" type="Camera" parent="Test/Player" index="0"]
