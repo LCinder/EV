@@ -1,18 +1,18 @@
 extends Label
 
 
-var tutorial = false
+var tutorial = true
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_action_pressed("Tutorial"):
+func _input(event):
+	if Input.is_action_just_pressed("Tutorial"):
 		
-		if tutorial == true:
-			tutorial = false
+		tutorial = not tutorial
+
+		if tutorial:
 			set_percent_visible(1.0)
 			
-		elif tutorial == false:
-			tutorial = true
+		else:
 			set_percent_visible(0.0)
 
 

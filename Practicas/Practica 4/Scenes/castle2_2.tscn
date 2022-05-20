@@ -580,9 +580,9 @@ Moverse Hacia Atras: S
 Moverse Hacia Izqda A
 Moverse Hacia Dcha D
 
-Camara 1:  1
+Camara Player: Player
 Camara 2 : 2
-Camara Player: 3
+Camara 3: 3
 
 Mostrar/Ocultar Tutorial: T"
 script = ExtResource( 22 )
@@ -610,9 +610,10 @@ script = ExtResource( 21 )
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.01952, 0 )
 
 [node name="CameraPlayer" type="Camera" parent="Test/Player" index="0"]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.591253, 1.975 )
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, -1.9545, 1.975 )
 current = true
-near = 0.49
+fov = 38.5557
+near = 0.17
 script = ExtResource( 6 )
 
 [connection signal="camera_1" from="Test" to="Puerta Animacion/AnimationPlayer" method="_on_Test_camera_1"]

@@ -4,9 +4,10 @@ extends Camera
 onready var yaw = get_parent()
 export var SENSIBILITY = 200
 var LIMIT_Y = 0.7
+var SENSIBILITY_LIMIT = 0.0008
 var y = 0
 
-var TRANSLATE_SENSIBILITY = 0.2
+var TRANSLATE_SENSIBILITY = 0.1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,9 +33,9 @@ func _input(event):
 				y = get_camera_transform().basis.z.y
 				
 			elif y > LIMIT_Y:
-				rotate_object_local(Vector3(1, 0, 0), 0.001)
+				rotate_object_local(Vector3(1, 0, 0), SENSIBILITY_LIMIT)
 			elif y < -LIMIT_Y:
-				rotate_object_local(Vector3(1, 0, 0), -0.001)
+				rotate_object_local(Vector3(1, 0, 0), -SENSIBILITY_LIMIT)
 			
 		if Input.is_action_pressed("Move Forward"):
 			yaw.translate_object_local(Vector3(0, 0, -TRANSLATE_SENSIBILITY))
