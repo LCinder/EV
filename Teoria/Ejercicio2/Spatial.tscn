@@ -1,40 +1,43 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [sub_resource type="Shader" id=2]
 code = "shader_type spatial;
-uniform sampler2D textura;
+uniform sampler2D tex;
 uniform float h = 0.3;
+uniform float v = 1;
 
 uniform sampler2D normalmap;
 varying vec2 tex_position;
 // Derivada: Restar a un pixel el de al lado
 
 void vertex() {
-	float h2 = texture(textura, vec2(UV.x+TIME*0.07, UV.y)).r;
+	float h2 = texture(tex, vec2(UV.x+TIME*0.07, UV.y)).r;
 	VERTEX += vec3(0, h*h2, 0);
 }
 
 void fragment() {
 	float size = 1.0/32.0;
-	ALBEDO = texture(textura, UV).rgb;
-	
 	float avg = (ALBEDO.x + ALBEDO.y + ALBEDO.z)/3.0;
+	vec3 albedo = texture(tex, UV).xyz;
 	
-	ALBEDO = texture(textura, UV+vec2(size, 0.0)).rgb  - texture(textura, UV).rgb;
+	vec3 albedo_x = texture(tex, UV+vec2(0.0, size)).xyz;
+	float avg_x = (albedo_x.r + albedo_x.g + albedo_x.b)/3.0;
 	
-	NORMALMAP = texture(normalmap, tex_position).xyz * vec3(2.0,2.0,1.0) - vec3(1.0,1.0,0.0);
-	NORMALMAP_DEPTH = 1.0;
+	vec3 albedo_y = texture(tex, UV+vec2(size, 0.0)).xyz;
+	float avg_y = (albedo_y.r + albedo_y.g + albedo_y.b)/3.0;
+	
+	float x = texture(tex, vec2(avg_x)).r - texture(tex, vec2(avg)).r;
+	float y = texture(tex, vec2(avg_y)).r - texture(tex, vec2(avg)).r;
+	
+	ALBEDO.xyz = vec3(x, y, 1.0);
+	
+	NORMALMAP = normalize((vec3(x, y, 1.0))*v);
 }"
-
-[sub_resource type="OpenSimplexNoise" id=4]
-
-[sub_resource type="NoiseTexture" id=5]
-noise = SubResource( 4 )
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = SubResource( 2 )
 shader_param/h = 0.161
-shader_param/textura = SubResource( 5 )
+shader_param/v = 1.0
 
 [sub_resource type="PlaneMesh" id=1]
 material = SubResource( 3 )
@@ -48,6 +51,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.318836 )
 mesh = SubResource( 1 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0252205, 0.339813, 0.126899 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.251853, 0.339813, 0.126899 )
 light_energy = 2.321
 omni_attenuation = 3.99999
