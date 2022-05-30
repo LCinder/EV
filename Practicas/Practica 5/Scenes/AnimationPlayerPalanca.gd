@@ -1,17 +1,15 @@
 extends AnimationPlayer
 
+onready var door = $"../../../Puerta Animacion2".get_node("AnimationPlayer")
+var abajo = true
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_action_just_pressed("Play"):
-		play("Cube.017Action.002")
+func _on_Area_input_event(camera, event, position, normal, shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT and event.pressed:
+			play("Cube.017Action.002")
+			abajo = not abajo
+			door.move_door(abajo)

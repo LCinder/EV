@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="BoxShape" id=1]
+
+[node name="AreaArriba" type="Area"]
+transform = Transform( 15, 0, 0, 0, 4.144, 0, 0, 0, 25, 3.56689, 2.83495, 2.37444 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+disabled = true
